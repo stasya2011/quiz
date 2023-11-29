@@ -1,7 +1,18 @@
+import Image from "next/image";
+
 const Dictionary = async () => {
   const res = await fetchNews();
-  console.log(res);
-  return res.map((el: any) => <h2 key={el.url}>{el.title}</h2>);
+  // console.log(res.length);
+  return res.map((el: any) => {
+    return (
+      <div key={el.url}>
+        <h2>{el.title}</h2>
+        {el.urlToImage ? (
+          <Image width={100} height={100} src={el.urlToImage} alt={el.title} />
+        ) : null}
+      </div>
+    );
+  });
 };
 
 export default Dictionary;

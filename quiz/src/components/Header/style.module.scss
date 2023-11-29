@@ -1,0 +1,11 @@
+.header {
+    height: 70px;
+    background-color: rgb(107, 105, 104);
+    display: flex;
+    align-items: center;
+    color: white;
+
+    & > a {
+        padding-left: 20px;
+    }
+}

@@ -1,18 +1,23 @@
-import Image from "next/image";
+import { IPreviewCard } from "./types";
+import PreviewCard from "@/src/components/PreviewCard";
 
 const Dictionary = async () => {
-  const res = await fetchNews();
-  // console.log(res.length);
-  return res.map((el: any) => {
-    return (
-      <div key={el.url}>
-        <h2>{el.title}</h2>
-        {el.urlToImage ? (
-          <Image width={100} height={100} src={el.urlToImage} alt={el.title} />
-        ) : null}
-      </div>
-    );
-  });
+  const articles = await fetchNews();
+  console.log(articles[0]);
+
+  return (
+    <div
+      style={{
+        display: "flex",
+        flexWrap: "wrap",
+        justifyContent: "space-around",
+      }}
+    >
+      {articles.map((el: IPreviewCard) => {
+        return <PreviewCard key={el.url} data={el} />;
+      })}
+    </div>
+  );
 };
 
 export default Dictionary;
@@ -20,8 +25,9 @@ export default Dictionary;
 const fetchNews = async () => {
   const key = process.env.API_KEY_THE_NEWS;
   const data = await fetch(
-    `https://newsapi.org/v2/everything?q=tesla&from=2023-10-29&sortBy=publishedAt&apiKey=${key}`
+    `https://newsapi.org/v2/everything?q=tesla&from=2023-10-29&sortBy=publishedAt&pageSize=9&page=2&apiKey=${key}`
   );
   const { articles } = await data.json();
+
   return articles;
 };

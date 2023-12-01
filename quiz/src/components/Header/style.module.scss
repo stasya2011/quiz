@@ -1,11 +1,19 @@
+@import "../../../global.scss";
+
 .header {
     height: 70px;
-    background-color: rgb(107, 105, 104);
+    background-color: $base-color-0;
     display: flex;
     align-items: center;
     color: white;
+    font-size: 16px;
 
     & > a {
         padding-left: 20px;
     }
+}
+
+.active {
+    font-weight: 700;
+    color: rgba(170, 255, 0, 0.691);
 }

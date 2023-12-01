@@ -15,7 +15,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="w-3/4 flex flex-col">
+      <body className="w-[1000px] flex flex-col">
         <HeaderCustom />
         {children}
       </body>

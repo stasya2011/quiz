@@ -1,0 +1,9 @@
+@import "../../../global.scss";
+
+.footer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-top: 2px solid $base-color-2;
+}

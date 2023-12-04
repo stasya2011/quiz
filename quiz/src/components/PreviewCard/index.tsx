@@ -4,7 +4,7 @@ import { IPreviewCard } from "@/app/dictionary/types";
 import styles from "./card.module.scss";
 
 const PreviewCard = ({ data }: { data: IPreviewCard }) => {
-  const { author, publishedAt, title, urlToImage } = data;
+  const { author, publishedAt, title, urlToImage, url } = data;
 
   return (
     <div className={styles.card}>
@@ -26,7 +26,7 @@ const PreviewCard = ({ data }: { data: IPreviewCard }) => {
           </div>
         ) : null}
       </div>
-      <PreviewCardFooter publishedAt={publishedAt} />
+      <PreviewCardFooter publishedAt={publishedAt} url={publishedAt} />
     </div>
   );
 };

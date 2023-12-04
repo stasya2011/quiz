@@ -1,10 +1,22 @@
+import Link from "next/link";
 import styles from "./footer.module.scss";
 
-const PreviewCardFooter = ({ publishedAt }: { publishedAt: string }) => {
+const PreviewCardFooter = ({
+  publishedAt,
+  url,
+}: {
+  publishedAt: string;
+  url: string;
+}) => {
   return (
     <div className={styles.footer}>
       <h3>{publishedAt}</h3>
-      <button>open</button>
+      <Link
+        href={`/dictionary
+      /${url}`}
+      >
+        open
+      </Link>
     </div>
   );
 };

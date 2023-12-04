@@ -4,7 +4,6 @@ import { fetchNews } from "@/services";
 
 const Dictionary = async () => {
   const { articles, totalResults } = await fetchNews();
-  console.log("++++++++++ // ++++++++++++++", totalResults);
 
   return (
     <div

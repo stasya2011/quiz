@@ -4,7 +4,7 @@ import { fetchNews } from "@/services";
 
 const Dictionary = async () => {
   const { articles, totalResults } = await fetchNews();
-
+  
   return (
     <div
       style={{

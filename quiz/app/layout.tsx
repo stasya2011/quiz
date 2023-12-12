@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import HeaderCustom from "@/src/components/Header";
+import ReduxProvider from "@/redux/provider";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -16,8 +16,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="w-[1000px] flex flex-col">
-        <HeaderCustom />
-        {children}
+        <ReduxProvider>
+          <HeaderCustom />
+          {children}
+        </ReduxProvider>
       </body>
     </html>
   );

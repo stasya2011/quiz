@@ -17,6 +17,9 @@ const nextConfig = {
       },
     ],
   },
+  env: {
+    customKey: process.env.API_KEY_THE_NEWS,
+  },
 };
 
 module.exports = nextConfig;

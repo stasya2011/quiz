@@ -1,13 +1,14 @@
 "use client";
 
+import { setArticles } from "@/redux/feachers/articlesSlice";
 import { fetchNews } from "@/services";
 
 const Pagination = ({ totalResults }: { totalResults: number }) => {
   const arr: number[] = [];
   const averagePageValue = Math.floor(totalResults / 6);
   const fetchNewArticles = async (page: string) => {
-    const { articles } = await fetchNews(page);
-    console.log("+++", articles);
+    const { articles, totalResults } = await fetchNews(page);
+    setArticles({ articles, totalResults });
   };
 
   for (let i = 0; i < averagePageValue; i++) {

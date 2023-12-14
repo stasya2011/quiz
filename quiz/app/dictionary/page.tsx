@@ -23,7 +23,7 @@ const Dictionary = async () => {
           <h2>No information was found.</h2>
         )}
       </div>
-      <Pagination totalResults={totalResults} />
+      {/* <Pagination totalResults={totalResults} /> */}
     </>
   );
 };
